@@ -12,6 +12,7 @@ use std::io;
 
 mod utils;
 mod linkserver;
+mod editserver;
 mod tutorial;
 mod about;
 
@@ -23,9 +24,10 @@ fn main() {
     println!("Welcome to STK Wizard!");
     println!("-> Options menu <-");
     println!("1 - Link a STK server to Wizard");
-    println!("2 - Read the tutorial");
-    println!("3 - About this project");
-    println!("4 - Exit");
+    println!("2 - Edit a linked server");
+    println!("3 - Read the tutorial");
+    println!("4 - About this project");
+    println!("5 - Exit");
 
     println!("\nChoose a option to start: ");
 
@@ -54,19 +56,24 @@ fn handle_menu(input: &String) {
                 println!("[SELECTED] 1 - Link a STK server to Wizard");
                 linkserver::init_screen();
              },
-        2 => {  // Read the tutorial
+        2 => {  // Edit a linked server
                 utils::clear_screen();
-                println!("[SELECTED] 2 - Read the tutorial");
+                println!("[SELECTED] 2 - Edit a linked server");
+                editserver::init_screen();
+             },   
+        3 => {  // Read the tutorial
+                utils::clear_screen();
+                println!("[SELECTED] 3 - Read the tutorial");
                 tutorial::init_screen();
              },
-        3 => {  // About us
+        4 => {  // About us
                 utils::clear_screen();
-                println!("[SELECTED] 3 - About this project");
+                println!("[SELECTED] 4 - About this project");
                 about::init_screen();
              },
-        4 => { // Exit
+        5 => { // Exit
                 utils::clear_screen();
-                println!("[SELECTED] 4 - Exit");
+                println!("[SELECTED] 5 - Exit");
                 return;
              },
         _ => { // Default / User typed a wrong number option
