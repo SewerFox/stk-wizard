@@ -14,6 +14,7 @@ use std::io;
 
 use crate::utils;
 use crate::main;
+use crate::server_linking::create;
 
 pub fn init_screen() {
     println!("What you want to do?");
@@ -53,6 +54,7 @@ fn handle_menu(input: &String) {
              },
         3 => {  // Create and link a STK server to Wizard
                 utils::clear_screen();
+                create::init();
              },
         4 => { // Go back
                 utils::clear_screen();

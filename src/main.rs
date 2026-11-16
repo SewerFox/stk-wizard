@@ -15,6 +15,10 @@ mod linkserver;
 mod tutorial;
 mod about;
 
+pub mod server_linking {
+    pub mod create;
+}
+
 fn main() {
     println!("Welcome to STK Wizard!");
     println!("-> Options menu <-");
