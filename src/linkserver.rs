@@ -6,9 +6,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
 */
 
-// linkservers.rs -> Handles the server linking mian menu and server listing system
+// linkservers.rs -> Handles the server linking main menu and server listing system
 
-// I don't want to write all "server links"-related functions here because the file would be stupidly long and hard to read/edit if I do this
+// I don't want to write all functions related to "server linking" here because, if I do, the file will become stupidly long and difficult to read/edit
 
 use std::io;
 
