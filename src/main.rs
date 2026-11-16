@@ -15,6 +15,25 @@ mod linkserver;
 mod tutorial;
 mod about;
 
+fn main() {
+    println!("Welcome to STK Wizard!");
+    println!("-> Options menu <-");
+    println!("1 - Link a STK server to Wizard");
+    println!("2 - Read the tutorial");
+    println!("3 - About this project");
+    println!("4 - Exit");
+
+    println!("\nChoose a option to start: ");
+
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("[FATAL] I/O failure"); // If the system fins a I/O error
+
+    handle_menu(&input);
+}
+
+// TODO: Find a way to put "handle_menu" function in a separated file to avoid repeat this everywhere
 fn handle_menu(input: &String) {
     let converted_input: u32 = match input.trim().parse() {
         Ok(num) => num,
@@ -46,28 +65,10 @@ fn handle_menu(input: &String) {
                 println!("[SELECTED] 4 - Exit");
                 return;
              },
-        _ => { // Default / User typed a worng number option
+        _ => { // Default / User typed a wrong number option
                 utils::clear_screen();
                 println!("[ERROR] You didn't type a valid number, try again.\n");
                 main();
              },
     }
-}
-
-fn main() {
-    println!("Welcome to STK Wizard!");
-    println!("-> Options menu <-");
-    println!("1 - Link a STK server to Wizard");
-    println!("2 - Read the tutorial");
-    println!("3 - About this project");
-    println!("4 - Exit");
-
-    println!("\nChoose a option to start: ");
-
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("[FATAL] I/O failure"); // If the system fins a I/O error
-
-    handle_menu(&input);
 }
