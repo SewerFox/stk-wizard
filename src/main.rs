@@ -1,9 +1,20 @@
 /*
-STK Wizard - A management tool for create/edit/modify/etc SuperTuxKart servers, written in Rust.
+STK Wizard - A management tool for create/edit/modify/etc 
+SuperTuxKart servers, written in Rust.
+
 Copyright (C) 2026 Gustavo Barreira
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
+
+This program is free software: you can redistribute it 
+and/or modify it under the terms of the GNU General Public License 
+as published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with this program. If not, see <https://www.gnu.org/licenses/>. 
 */
 
 // main.rs -> Main file of this project. Handles the main menu screen.
@@ -15,11 +26,9 @@ mod linkserver;
 mod editserver;
 mod tutorial;
 mod about;
-
 pub mod server_linking {
     pub mod create;
 }
-
 fn main() {
     println!("Welcome to STK Wizard!");
     println!("-> Options menu <-");
@@ -34,7 +43,7 @@ fn main() {
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
-        .expect("[FATAL] I/O failure"); // If the system fins a I/O error
+        .expect("[FATAL] I/O failure"); // If the system finds a I/O error
 
     handle_menu(&input);
 }

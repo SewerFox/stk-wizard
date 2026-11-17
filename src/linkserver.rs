@@ -1,14 +1,26 @@
 /*
-STK Wizard - A management tool for create/edit/modify/etc SuperTuxKart servers, written in Rust.
+STK Wizard - A management tool for create/edit/modify/etc 
+SuperTuxKart servers, written in Rust.
+
 Copyright (C) 2026 Gustavo Barreira
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
+
+This program is free software: you can redistribute it 
+and/or modify it under the terms of the GNU General Public License 
+as published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with this program. If not, see <https://www.gnu.org/licenses/>. 
 */
 
 // linkservers.rs -> Handles the server linking main menu and server listing system
 
-// I don't want to write all functions related to "server linking" here because, if I do, the file will become stupidly long and difficult to read/edit
+// I don't want to write all functions related to "server linking"
+// here because, if I do, the file will become stupidly long and difficult to read/edit
 
 use std::io;
 
@@ -29,7 +41,7 @@ pub fn init_screen() {
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
-        .expect("[FATAL] I/O failure"); // If the system fins a I/O error
+        .expect("[FATAL] I/O failure"); // If the system finds a I/O error
 
     handle_menu(&input);
 }
@@ -39,7 +51,7 @@ fn handle_menu(input: &String) {
     let converted_input: u32 = match input.trim().parse() {
         Ok(num) => num,
         Err(_)  => {
-            println!("[ERROR] You didn't type a valid character, try again."); // If the user types anything, unless a integer number
+            println!("[ERROR] You didn't type a valid character, try again."); // If the user types anything unless a integer number
             0
         }
     };
