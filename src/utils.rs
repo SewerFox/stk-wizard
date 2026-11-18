@@ -22,6 +22,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 use std::io;
 use std::io::Write;
 
+// Clear the screen (duh)
 pub fn clear_screen() {
     print!("\x1B[2J\x1B[1;1H");
     io::stdout().flush().unwrap();
